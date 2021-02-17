@@ -1,5 +1,4 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
 
 const style = {
   // backgroundColor: "#c1ffff",
@@ -11,15 +10,23 @@ const style = {
 };
 
 type Props = {
-  title: string;
-  value: number;
+  onChange: any;
+  inputValue: any;
+  register: any;
+  name: any;
 };
 export const BodyInput = (props: Props) => {
   return (
     <div style={style}>
-      {props.title}
-      <TextField title={props.title} />
-      <button>追加</button>
+      <label>{props.name}: </label>
+      <input
+        type="number"
+        placeholder={props.name}
+        onChange={props.onChange}
+        value={props.inputValue}
+        name={props.name}
+        ref={props.register}
+      />
     </div>
   );
 };
